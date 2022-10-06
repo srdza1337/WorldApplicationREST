@@ -13,7 +13,6 @@ public class ErrorDTO {
 	public String timestamp = ZonedDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss a z Z"));
 	
 	  
-
 	public ErrorDTO(String title, String detail, int status, String errorType, String errorCode) {
 		super();
 		this.title = title;

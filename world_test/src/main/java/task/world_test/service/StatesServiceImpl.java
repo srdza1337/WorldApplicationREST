@@ -2,12 +2,8 @@ package task.world_test.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Service;
-
 import task.world_test.exception.StateCodeNotFoundException;
 import task.world_test.model.States;
 import task.world_test.repository.StatesRepository;

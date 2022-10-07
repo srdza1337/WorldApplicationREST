@@ -3,6 +3,8 @@ package task.world_test.service;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import task.world_test.exception.StateCodeNotFoundException;
 import task.world_test.model.States;
@@ -37,7 +39,8 @@ public class StatesServiceImpl implements StatesService{
 		return statesRepository.findById(id).get();
 	}
 	
-	public List<States> getAllStates(){
-		return statesRepository.getAllStates();
+	public Page<States> getAllStates(int offset, int pageSize){
+		Page<States> pages =statesRepository.getAllStates(PageRequest.of(offset, pageSize));
+		return pages;
 	}
 }

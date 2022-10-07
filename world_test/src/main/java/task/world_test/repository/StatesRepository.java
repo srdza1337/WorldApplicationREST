@@ -2,6 +2,9 @@ package task.world_test.repository;
 
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -22,8 +25,8 @@ public interface StatesRepository extends JpaRepository<States, Long>{
 	//3. Vratiti kojoj državi i kontinentu pripada state za prosleđen state kod.
 	Optional<States> findByStateCode(String stateCode);
 	
-	@Query("Select s from States s ")
-	public List<States> getAllStates();
+	@Query("Select s from States s")
+	public Page<States> getAllStates(Pageable pageable);
 	
 
 }
